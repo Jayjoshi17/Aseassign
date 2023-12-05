@@ -31,9 +31,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Syntax = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
-            this.Run = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Run = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,15 +63,6 @@
             this.Reset.Text = "Reset";
             this.Reset.UseVisualStyleBackColor = true;
             // 
-            // Run
-            // 
-            this.Run.Location = new System.Drawing.Point(611, 411);
-            this.Run.Name = "Run";
-            this.Run.Size = new System.Drawing.Size(98, 31);
-            this.Run.TabIndex = 4;
-            this.Run.Text = "Run";
-            this.Run.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(346, 29);
@@ -87,6 +78,15 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(395, 26);
             this.textBox2.TabIndex = 1;
+            // 
+            // Run
+            // 
+            this.Run.Location = new System.Drawing.Point(611, 411);
+            this.Run.Name = "Run";
+            this.Run.Size = new System.Drawing.Size(98, 31);
+            this.Run.TabIndex = 4;
+            this.Run.Text = "Run";
+            this.Run.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -112,9 +112,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Syntax;
         private System.Windows.Forms.Button Reset;
-        private System.Windows.Forms.Button Run;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button Run;
     }
 }
 
