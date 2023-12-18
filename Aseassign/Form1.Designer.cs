@@ -87,6 +87,7 @@
             this.Run.TabIndex = 4;
             this.Run.Text = "Run";
             this.Run.UseVisualStyleBackColor = true;
+            this.Run.Click += new System.EventHandler(this.Run_Click);
             // 
             // Form1
             // 

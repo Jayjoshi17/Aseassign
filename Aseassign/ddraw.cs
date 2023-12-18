@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aseassign
+{
+    public class ddraw
+    {
+        public void draw(Graphics j, string command)
+        {
+            Pen pen = new Pen(Color.Purple, 3);
+           
+        }
+    }
+}
