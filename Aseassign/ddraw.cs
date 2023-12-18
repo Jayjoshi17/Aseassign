@@ -17,7 +17,11 @@ namespace Aseassign
                 Circle circle = new Circle(30);
                 circle.draw(j, pen);
             }
-            
+            else if (command == "square" || command == "rectangle")
+            {
+                Rectangle rect = new Rectangle(50, 50);
+                rect.draw(j, pen);
+            }
         }
     }
 }
