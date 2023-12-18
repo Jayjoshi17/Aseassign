@@ -19,7 +19,7 @@ namespace Aseassign
             }
             else if (command == "square" || command == "rectangle")
             {
-                Rectangle rect = new Rectangle(50, 50);
+                Rectangle rect = new Rectangle(50, 100);
                 rect.draw(j, pen);
             }
         }
