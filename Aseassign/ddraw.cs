@@ -12,7 +12,12 @@ namespace Aseassign
         public void draw(Graphics j, string command)
         {
             Pen pen = new Pen(Color.Purple, 3);
-           
+            if (command == "circle")
+            {
+                Circle circle = new Circle(30);
+                circle.draw(j, pen);
+            }
+            
         }
     }
 }
