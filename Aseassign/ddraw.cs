@@ -33,19 +33,9 @@ namespace Aseassign
             commandlist.Add("reset");
             if (commandlist.Contains(split_command[0]))
             {
-                /*
-                if (split_command[0] == "fill")
-                {
-                     if (split_command[1] == "on")
-                {
-                    fillEnable = true;
-                }
-                else
-                {
-                    fillEnable = false;
-                }
-                }*/
-                switch (split_command[0])
+       
+              }
+                switch(split_command[0])
                 {
                     case "circle":
                         Circle r = new Circle(int.Parse(split_command[1]));
@@ -58,6 +48,7 @@ namespace Aseassign
                             r.draw(j, pen, xpos, ypos);
                         }
                         break;
+
                     case "rectangle":
                         Rectangle rect = new Rectangle(int.Parse(split_command[1]), int.Parse(split_command[2]));
                         if (fillvalue == "on")
@@ -69,11 +60,10 @@ namespace Aseassign
                             rect.draw(j, pen, xpos, ypos);
                         }
                         break;
-
                 }
             }
         }
     }
-}
+
 
            
