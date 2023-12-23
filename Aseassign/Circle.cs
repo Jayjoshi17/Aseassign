@@ -14,13 +14,21 @@ namespace Aseassign
         {
             this.radius = radius;
         }
-        public void draw(Graphics j, Pen p)
+        public void draw(Graphics j, Pen p, int xpos, int ypos)
         {
             if (j is null)
             {
                 throw new ArgumentNullException(nameof(j));
             }
-            j.DrawEllipse(p, 0, 0, radius, radius);
+            j.DrawEllipse(p, xpos, ypos, radius, radius);
+        }
+        public void drawfill(Graphics j, Brush brush, int xpos, int ypos)
+        {
+            if(j is null)
+            {
+                throw new ArgumentException(nameof(j));
+            }
+            j.FillEllipse(brush, xpos, ypos, radius, radius);
         }
     }
 }
