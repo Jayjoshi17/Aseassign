@@ -34,7 +34,7 @@ namespace Aseassign
 
             ddraw d = new ddraw();
             d.draw(ase,textBox2.Text);
-            pictureBox1.Refresh();
+            Refresh();
         }
     }
 }

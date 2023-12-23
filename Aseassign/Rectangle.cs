@@ -16,13 +16,22 @@ namespace Aseassign
             this.Height = Height;
             this.Width = Width;
         }
-        public void draw(Graphics j, Pen p)
+        public void draw(Graphics j, Pen p, int xpos, int ypos)
         {
-            if (j == null)
+            if (j is null)
             {
                 throw new ArgumentNullException(nameof(j));
             }
-            j.DrawRectangle(p, 0, 0, Height, Width);
+            j.DrawRectangle(p, xpos, ypos, Height, Width);
+        }
+
+        public void drawfill(Graphics j, Brush brush, int xpos, int ypos)
+        {
+            if (j is null)
+            {
+                throw new ArgumentNullException(nameof(j));
+            }
+            j.FillRectangle(brush, xpos, ypos, Height, Width);
         }
     }
 }

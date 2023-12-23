@@ -34,6 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.Run = new System.Windows.Forms.Button();
+            this.fill = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(478, 414);
+            this.Reset.Location = new System.Drawing.Point(447, 413);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(94, 28);
             this.Reset.TabIndex = 3;
@@ -81,7 +82,7 @@
             // 
             // Run
             // 
-            this.Run.Location = new System.Drawing.Point(611, 411);
+            this.Run.Location = new System.Drawing.Point(560, 413);
             this.Run.Name = "Run";
             this.Run.Size = new System.Drawing.Size(98, 31);
             this.Run.TabIndex = 4;
@@ -89,11 +90,20 @@
             this.Run.UseVisualStyleBackColor = true;
             this.Run.Click += new System.EventHandler(this.Run_Click);
             // 
+            // fill
+            // 
+            this.fill.Location = new System.Drawing.Point(682, 416);
+            this.fill.Name = "fill";
+            this.fill.Size = new System.Drawing.Size(57, 26);
+            this.fill.TabIndex = 6;
+            this.fill.Text = "fill";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fill);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Run);
             this.Controls.Add(this.Reset);
@@ -116,6 +126,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button Run;
+        private System.Windows.Forms.TextBox fill;
     }
 }
 
