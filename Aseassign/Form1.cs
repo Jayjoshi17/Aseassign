@@ -32,6 +32,9 @@ namespace Aseassign
             var ase = Graphics.FromImage(pictureBox1.Image);
             ase.Clear(Color.White);
 
+            fill ff = new fill();
+            ff.fillvalue = fillBox.Text;
+
             ddraw d = new ddraw();
             d.draw(ase,textBox2.Text);
             Refresh();

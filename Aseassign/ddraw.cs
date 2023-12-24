@@ -33,37 +33,77 @@ namespace Aseassign
             commandlist.Add("reset");
             if (commandlist.Contains(split_command[0]))
             {
-       
-              }
-                switch(split_command[0])
-                {
-                    case "circle":
-                        Circle r = new Circle(int.Parse(split_command[1]));
-                        if (fillvalue == "on")
-                        {
-                            r.drawfill(j, brush, xpos, ypos);
-                        }
-                        else
-                        {
-                            r.draw(j, pen, xpos, ypos);
-                        }
-                        break;
 
-                    case "rectangle":
-                        Rectangle rect = new Rectangle(int.Parse(split_command[1]), int.Parse(split_command[2]));
-                        if (fillvalue == "on")
-                        {
-                            rect.drawfill(j, brush, xpos, ypos);
-                        }
-                        else
-                        {
-                            rect.draw(j, pen, xpos, ypos);
-                        }
-                        break;
-                }
+            }
+            switch (split_command[0])
+            {
+                case "circle":
+                    Circle r = new Circle(int.Parse(split_command[1]));
+                    if (fillvalue == "on")
+                    {
+                        r.drawfill(j, brush, xpos, ypos);
+                    }
+                    else
+                    {
+                        r.draw(j, pen, xpos, ypos);
+                    }
+                    break;
+
+                case "rectangle":
+                    Rectangle rect = new Rectangle(int.Parse(split_command[1]), int.Parse(split_command[2]));
+                    if (fillvalue == "on")
+                    {
+                        rect.drawfill(j, brush, xpos, ypos);
+                    }
+                    else
+                    {
+                        rect.draw(j, pen, xpos, ypos);
+                    }
+                    break;
+                case "triangle":
+                    triangle tt = new triangle(j, pen);
+                    if (fillvalue == "on")
+                    {
+                        tt.drawfill(j, brush, xpos, ypos);
+                    }
+                    else
+                    {
+                        tt.draw(j, pen, xpos, ypos);
+                    }
+                    break;
+                case "square":
+                    Rectangle sr = new Rectangle(int.Parse(split_command[1]), int.Parse(split_command[2]));
+                    if (fillvalue == "on")
+                    {
+                        sr.drawfill(j, brush, xpos, ypos);
+                    }
+                    else
+                    {
+                        sr.draw(j, pen, xpos, ypos);
+                    }
+                    break;
+
+                case "clear":
+                    clear lc = new clear();
+                    lc.draw(j);
+                    break;
+
+                case "drawto":
+                    int X = int.Parse(split_command[1]);
+                    int Y = int.Parse(split_command[2]);
+                    j.DrawLine(pen, xpos, ypos, X, Y);
+                    xpos = int.Parse(split_command[1]);
+                    ypos = int.Parse(split_command[2]);
+                    break;
+                default:
+                    break;
             }
         }
+                    
     }
+}
+
+
 
 
            

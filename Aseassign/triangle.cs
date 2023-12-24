@@ -23,7 +23,7 @@ namespace Aseassign
                 throw new ArgumentNullException(nameof(j));
             }
             Point[] points = { new Point(9, 80), new Point(100, 10), new Point(150, 200) };
-            j.DrawPolygon(j, points);
+            j.DrawPolygon(p, points);
         }
         public void drawfill(Graphics j, Brush brush, int xpos, int ypos)
         {
