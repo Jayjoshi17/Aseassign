@@ -14,9 +14,9 @@ namespace Aseassign
     {
         private int xpos = 0;
         private int ypos = 0;
-        public void draw(Graphics j, String cmd)
+        public void draw(Graphics j, String cmd, String fillvalue)
         {
-            String fillvalue = "on";
+            String fill = "off";
             Pen pen = new Pen(Color.Purple);
             Brush brush = new SolidBrush(Color.Red);
             String command = cmd;
