@@ -19,7 +19,7 @@ namespace Aseassign
         List<string> mthds = new List<string>();
         List<string> mthds_cmds = new List<string>();
         Graphics j;
-        public multiline(string cmds, Graphics j, String fillvalue)
+        public multiline(String cmds, Graphics j, String fillvalue)
         {
             this.cmds = cmds;
             this.j = j;
@@ -42,6 +42,8 @@ namespace Aseassign
             for (int i = 0; i < lines.Length; i++)
             {
                 String[] split_command = lines[i].Split(' ');
+
+
                 if (commandlist.Contains(split_command[0]))
                 {
                     split_command[0].ToLower();
@@ -53,12 +55,14 @@ namespace Aseassign
                                 ddraw dr = new ddraw();
                                 dr.draw(j, cmds, fillvalue);
                             }
-                            else if (vrs.Contains(split_command[1]))
+                            else if(vrs.Contains(split_command[1]))
                             {
-                                int element = cmds.IndexOf(split_command[1]);
+                                Font f = new Font("Arial", 14);
+                                j.DrawString("madarchod", f, Brushes.Red, new Point(50, 50));
+                               /* int element = vrs.IndexOf(split_command[1]);
                                 String circle_command = split_command[0] + " " + vales[element];
                                 ddraw dr = new ddraw();
-                                dr.draw(j, circle_command, fillvalue);
+                                dr.draw(j, "circle 90", fillvalue);*/
                             }
                             break;
                         case "rectangle":
@@ -137,6 +141,14 @@ namespace Aseassign
                             break;
                         default: break;
                     }
+                }
+
+
+                if (split_command.Contains("="))
+                {
+                    vrs.Add(split_command[0].Trim());
+                    vales.Add(split_command[2].Trim());
+                   
                 }
             }
 
