@@ -55,7 +55,7 @@ namespace Aseassign
                         String[] split_command = muti.Split('\n');
                         foreach (String i in split_command)
                         {
-                            d.draw(ase, i, ff.fillvalue);
+                            multiline mm = new multiline(textBox1.Text, ase, ff.fillvalue);
                         }
                     }
                     else
