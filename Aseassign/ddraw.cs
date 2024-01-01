@@ -16,7 +16,7 @@ namespace Aseassign
         private int ypos = 0;
         public void draw(Graphics j, String cmd, String fillvalue)
         {
-            String fill = "off";
+            
             Pen pen = new Pen(Color.Purple);
             Brush brush = new SolidBrush(Color.Red);
             String command = cmd;
