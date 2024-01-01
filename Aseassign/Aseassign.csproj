@@ -62,6 +62,7 @@
     <Compile Include="Rectangle.cs" />
     <Compile Include="reset.cs" />
     <Compile Include="triangle.cs" />
+    <Compile Include="vb_op.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

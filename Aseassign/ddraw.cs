@@ -25,7 +25,7 @@ namespace Aseassign
 
             List<string> commandlist = new List<string>();
             commandlist.Add("circle");
-            commandlist.Add("Rectangle");
+            commandlist.Add("rectangle");
             commandlist.Add("triangle");
             commandlist.Add("square");
             commandlist.Add("drawto");

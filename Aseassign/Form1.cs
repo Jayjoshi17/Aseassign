@@ -51,13 +51,11 @@ namespace Aseassign
                 {
                     if(textBox2.Text.Equals("run"))
                     {
-                        String muti = textBox1.Text;
-                        String[] split_command = muti.Split('\n');
-                        foreach (String i in split_command)
-                        {
-                            multiline mm = new multiline(i, ase, ff.fillvalue);
+                    
+                        
+                            multiline mm = new multiline(textBox1.Text, ase, ff.fillvalue);
                             mm.multiline_call();
-                        }
+                        
                     }
                     else
                     {

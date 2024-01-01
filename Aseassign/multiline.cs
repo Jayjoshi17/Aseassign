@@ -1,4 +1,6 @@
 ﻿using System;
+using Aseassign;
+using Aseassign.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Configuration;
@@ -13,8 +15,8 @@ namespace Aseassign
     {
         String cmds;
         String fillvalue;
-        List<string> vrs = new List<string>();
-        List<string> vales = new List<string>();
+        List<string> var = new List<string>();
+        List<string> val = new List<string>();
         List<string> mth_vars = new List<string>();
         List<string> mthds = new List<string>();
         List<string> mthds_cmds = new List<string>();
@@ -31,88 +33,92 @@ namespace Aseassign
             {
                 throw new ArgumentNullException(nameof(j));
             }
-            List<string> commandlist = new List<string>();
-            commandlist.Add("circle");
-            commandlist.Add("rectangle");
-            commandlist.Add("triangle");
-            commandlist.Add("square");
-            commandlist.Add("drawto");
-            commandlist.Add("clear");
+            List<string> acttable = new List<string>();
+            acttable.Add("circle");
+            acttable.Add("rectangle");
+            acttable.Add("triangle");
+            acttable.Add("square");
+            acttable.Add("drawto");
+            acttable.Add("clear");
             String[] lines = cmds.Split('\n');
             for (int i = 0; i < lines.Length; i++)
             {
-                String[] split_command = lines[i].Split(' ');
+                String[] sp_command = lines[i].Split(' ');
 
 
-                if (commandlist.Contains(split_command[0]))
+                if (sp_command.Contains("="))
                 {
-                    split_command[0].ToLower();
-                    switch (split_command[0])
+                    val.Add(sp_command[2]);
+                    var.Add(sp_command[0]);
+                }
+                if (acttable.Contains(sp_command[0]))
+                {
+                    sp_command[0].ToLower();
+                    switch (sp_command[0])
                     {
                         case "circle":
-                            if (int.TryParse(split_command[1], out _))
+                            if (int.TryParse(sp_command[1], out _))
                             {
                                 ddraw dr = new ddraw();
                                 dr.draw(j, cmds, fillvalue);
                             }
-                            else if(vrs.Contains(split_command[1]))
+                            else if(var.Contains(sp_command[1]))
                             {
-                                Font f = new Font("Arial", 14);
-                                j.DrawString("madarchod", f, Brushes.Red, new Point(50, 50));
-                               /* int element = vrs.IndexOf(split_command[1]);
-                                String circle_command = split_command[0] + " " + vales[element];
+                                
+                                int element = var.IndexOf(sp_command[1]);
+                                String circle_command = sp_command[0] + " " + val[element];
                                 ddraw dr = new ddraw();
-                                dr.draw(j, "circle 90", fillvalue);*/
+                                dr.draw(j, circle_command, fillvalue);
                             }
                             break;
                         case "rectangle":
-                            if (int.TryParse(split_command[1], out _) && int.TryParse(split_command[2], out _))
+                            if (int.TryParse(sp_command[1], out _) && int.TryParse(sp_command[2], out _))
                             {
                                 ddraw dr = new ddraw();
                                 dr.draw(j, lines[i], fillvalue);
                             }
-                            else if (vrs.Contains(split_command[1]) && vrs.Contains(split_command[2]))
+                            else if (var.Contains(sp_command[1]) && var.Contains(sp_command[2]))
                             {
-                                int element = vrs.IndexOf(split_command[1]);
-                                int element2 = vrs.IndexOf(split_command[2]);
-                                String rect_command = split_command[0] + " " + vales[element] + " " + vales[element2];
+                                int element = var.IndexOf(sp_command[1]);
+                                int element2 = var.IndexOf(sp_command[2]);
+                                String square_command = sp_command[0] + " " + val[element] + " " + val[element2];
                                 ddraw dr = new ddraw();
-                                dr.draw(j, rect_command, fillvalue);
+                                dr.draw(j, square_command, fillvalue);
                             }
                             break;
                         case "square":
-                            if (int.TryParse(split_command[1], out _) && int.TryParse(split_command[2], out _))
+                            if (int.TryParse(sp_command[1], out _) && int.TryParse(sp_command[2], out _))
                             {
                                 ddraw dr = new ddraw();
                                 dr.draw(j, lines[i], fillvalue);
                             }
-                            else if (vrs.Contains(split_command[1]) && vrs.Contains(split_command[2]))
+                            else if (var.Contains(sp_command[1]) && var.Contains(sp_command[2]))
                             {
-                                int element = vrs.IndexOf(split_command[1]);
-                                int element2 = vrs.IndexOf(split_command[2]);
-                                String square_command = split_command[0] + " " + vales[element] + " " + vales[element2];
+                                int element = var.IndexOf(sp_command[1]);
+                                int element2 = var.IndexOf(sp_command[2]);
+                                String square_command = sp_command[0] + " " + val[element] + " " + val[element2];
                                 ddraw dr = new ddraw();
                                 dr.draw(j, square_command, fillvalue);
                             }
                             break;
                         case "triangle":
-                            String[] first_value = split_command[1].Split(',');
-                            String[] second_value = split_command[2].Split(',');
-                            String[] third_value = split_command[3].Split(',');
+                            String[] first_value = sp_command[1].Split(',');
+                            String[] second_value = sp_command[2].Split(',');
+                            String[] third_value = sp_command[3].Split(',');
                             if ((int.TryParse(first_value[0], out _) && int.TryParse(first_value[1], out _)) && (int.TryParse(second_value[0], out _) && int.TryParse(second_value[1], out _)) && (int.TryParse(third_value[0], out _) && int.TryParse(third_value[1], out _)))
                             {
                                 ddraw dr = new ddraw();
                                 dr.draw(j, lines[i], fillvalue);
                             }
-                            else if (vrs.Contains(first_value[0]) && vrs.Contains(first_value[1]) && vrs.Contains(second_value[0]) && vrs.Contains(second_value[1]) && vrs.Contains(third_value[0]) && vrs.Contains(third_value[1]))
+                            else if (var.Contains(first_value[0]) && var.Contains(first_value[1]) && var.Contains(second_value[0]) && var.Contains(second_value[1]) && var.Contains(third_value[0]) && var.Contains(third_value[1]))
                             {
-                                int element = vrs.IndexOf(first_value[0]);
-                                int element1 = vrs.IndexOf(first_value[1]);
-                                int element2 = vrs.IndexOf(second_value[0]);
-                                int element3 = vrs.IndexOf(second_value[1]);
-                                int element4 = vrs.IndexOf(third_value[0]);
-                                int element5 = vrs.IndexOf(third_value[1]);
-                                String square_command = split_command[0] + " " + vales[element] + "," + vales[element1] + " " + vales[element2] + "," + vales[element3] + " " + vales[element4] + "," + vales[element5];
+                                int element = var.IndexOf(first_value[0]);
+                                int element1 = var.IndexOf(first_value[1]);
+                                int element2 = var.IndexOf(second_value[0]);
+                                int element3 = var.IndexOf(second_value[1]);
+                                int element4 = var.IndexOf(third_value[0]);
+                                int element5 = var.IndexOf(third_value[1]);
+                                String square_command = sp_command[0] + " " + val[element] + "," + val[element1] + " " + val[element2] + "," + val[element3] + " " + val[element4] + "," + val[element5];
                                 ddraw dr = new ddraw();
                                 dr.draw(j, square_command, fillvalue);
                             }
@@ -125,16 +131,16 @@ namespace Aseassign
                             }
                             break;
                         case "drawto":
-                            if (int.TryParse(split_command[1], out _) && int.TryParse(split_command[2], out _))
+                            if (int.TryParse(sp_command[1], out _) && int.TryParse(sp_command[2], out _))
                             {
                                 ddraw dr = new ddraw();
                                 dr.draw(j, lines[i], fillvalue);
                             }
-                            else if (vrs.Contains(split_command[1]) && vrs.Contains(split_command[2]))
+                            else if (var.Contains(sp_command[1]) && var.Contains(sp_command[2]))
                             {
-                                int element = vrs.IndexOf(split_command[1]);
-                                int element2 = vrs.IndexOf(split_command[2]);
-                                String drawto = split_command[0] + " " + vales[element] + " " + vales[element2];
+                                int element = var.IndexOf(sp_command[1]);
+                                int element2 = var.IndexOf(sp_command[2]);
+                                String drawto = sp_command[0] + " " + val[element] + " " + val[element2];
                                 ddraw dr = new ddraw();
                                 dr.draw(j, drawto, fillvalue);
                             }
@@ -143,57 +149,52 @@ namespace Aseassign
                     }
                 }
 
-
-                if (split_command.Contains("="))
+                if (sp_command[0].Equals("print"))
                 {
-                    vrs.Add(split_command[0].Trim());
-                    vales.Add(split_command[2].Trim());
-                   
-                }
-                
-                else if (split_command[0].Equals("print"))
-                {
-                    if (split_command.Length == 2 && vrs.Contains(split_command[1]))
+                             Font ft = new Font("Arial", 14);
+                    if (sp_command.Length == 2 && var.Contains(sp_command[1]))
                     {
-                        int element = vrs.IndexOf(split_command[1]);
+                        int element = var.IndexOf(sp_command[1]);
                         if(element >= 0)
                         {
-                            Font ft = new Font("Arial", 14);
-                            j.DrawString(vales[element], ft, Brushes.Purple, new Point(50, 50));
+                            j.DrawString(val[element], ft, Brushes.Purple, new Point(50, 50));
                         }
                     }
-                    else if (split_command.Length == 4 && vrs.Contains(split_command[1]) && vrs.Contains(split_command[3]) && (split_command[2] == "+" || split_command[2] == "-" || split_command[2] == "*" || split_command[2] == "/"))
+                    else if (sp_command.Length == 4 && var.Contains(sp_command[1]) && var.Contains(sp_command[3]) && (sp_command[2] == "+" || sp_command[2] == "-" || sp_command[2] == "*" || sp_command[2] == "/"))
                     {
-                        int vable = vrs.IndexOf(split_command[1]);
-                        int vable2 = vrs.IndexOf(split_command[3]);
-                        int vl1 = int.Parse(vales[vable]);
-                        int vl2 = int.Parse(vales[vable2]);
-                        if (split_command[2] == "+")
+                        int vable = var.IndexOf(sp_command[1]);
+                        int vable2 = var.IndexOf(sp_command[3]);
+                        int vl1 = int.Parse(val[vable]);
+                        int vl2 = int.Parse(val[vable2]);
+                        if (sp_command[2] == "+")
                         {
                             int result = vl1 + vl2;
-                            Font ft = new Font("Bold", 14);
                             j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
                         }
-                        if (split_command[2] == "-")
+                        if (sp_command[2] == "-")
                         {
                             int result = vl1 + vl2;
-                            Font ft = new Font("Bold", 14);
                             j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
                         }
-                        if (split_command[2] == "*")
+                        if (sp_command[2] == "*")
                         {
                             int result = vl1 + vl2;
-                            Font ft = new Font("Bold", 14);
                             j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
                         }
-                        if (split_command[2] == "/")
+                        if (sp_command[2] == "/")
                         {
                             int result = vl1 + vl2;
-                            Font ft = new Font("Bold", 14);
                             j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
                         }
                     }
                 }
+                if (var.Contains(sp_command[0]) && sp_command[1] == "=" && (sp_command[2]) == sp_command[0])
+              {
+                vb_op vp = new vb_op(val, var);
+                int element = var.IndexOf(sp_command[2]);
+                val[element] = vp.n_w(lines[i]);
+            }
+
             }
 
         }
