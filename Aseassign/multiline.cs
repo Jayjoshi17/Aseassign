@@ -150,6 +150,50 @@ namespace Aseassign
                     vales.Add(split_command[2].Trim());
                    
                 }
+                
+                else if (split_command[0].Equals("print"))
+                {
+                    if (split_command.Length == 2 && vrs.Contains(split_command[1]))
+                    {
+                        int element = vrs.IndexOf(split_command[1]);
+                        if(element >= 0)
+                        {
+                            Font ft = new Font("Arial", 14);
+                            j.DrawString(vales[element], ft, Brushes.Purple, new Point(50, 50));
+                        }
+                    }
+                    else if (split_command.Length == 4 && vrs.Contains(split_command[1]) && vrs.Contains(split_command[3]) && (split_command[2] == "+" || split_command[2] == "-" || split_command[2] == "*" || split_command[2] == "/"))
+                    {
+                        int vable = vrs.IndexOf(split_command[1]);
+                        int vable2 = vrs.IndexOf(split_command[3]);
+                        int vl1 = int.Parse(vales[vable]);
+                        int vl2 = int.Parse(vales[vable2]);
+                        if (split_command[2] == "+")
+                        {
+                            int result = vl1 + vl2;
+                            Font ft = new Font("Bold", 14);
+                            j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
+                        }
+                        if (split_command[2] == "-")
+                        {
+                            int result = vl1 + vl2;
+                            Font ft = new Font("Bold", 14);
+                            j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
+                        }
+                        if (split_command[2] == "*")
+                        {
+                            int result = vl1 + vl2;
+                            Font ft = new Font("Bold", 14);
+                            j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
+                        }
+                        if (split_command[2] == "/")
+                        {
+                            int result = vl1 + vl2;
+                            Font ft = new Font("Bold", 14);
+                            j.DrawString(result.ToString(), ft, Brushes.Purple, new Point(50, 50));
+                        }
+                    }
+                }
             }
 
         }
