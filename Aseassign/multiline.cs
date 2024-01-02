@@ -65,9 +65,9 @@ namespace Aseassign
                                 ddraw dr = new ddraw();
                                 dr.draw(j, cmds, fillvalue);
                             }
-                            else if(var.Contains(sp_command[1]))
+                            else if (var.Contains(sp_command[1]))
                             {
-                                
+
                                 int element = var.IndexOf(sp_command[1]);
                                 String circle_command = sp_command[0] + " " + val[element];
                                 ddraw dr = new ddraw();
@@ -154,11 +154,11 @@ namespace Aseassign
 
                 if (sp_command[0].Equals("print"))
                 {
-                             Font ft = new Font("Arial", 14);
+                    Font ft = new Font("Arial", 14);
                     if (sp_command.Length == 2 && var.Contains(sp_command[1]))
                     {
                         int element = var.IndexOf(sp_command[1]);
-                        if(element >= 0)
+                        if (element >= 0)
                         {
                             j.DrawString(val[element], ft, Brushes.Purple, new Point(50, 50));
                         }
@@ -192,17 +192,17 @@ namespace Aseassign
                     }
                 }
                 if (var.Contains(sp_command[0]) && sp_command[1] == "=" && (sp_command[2]) == sp_command[0])
-              {
-                vb_op vp = new vb_op(val, var);
-                int element = var.IndexOf(sp_command[2]);
-                val[element] = vp.n_w(lines[i]);
-            }
+                {
+                    vb_op vp = new vb_op(val, var);
+                    int element = var.IndexOf(sp_command[2]);
+                    val[element] = vp.n_w(lines[i]);
+                }
 
-            if (sp_command[0] == "if")
+                if (sp_command[0] == "if")
                 {
                     if_condition fc = new if_condition(j, sp_command[2]);
                     String valid = fc.if_statement();
-                    if(valid == "false")
+                    if (valid == "false")
                     {
                         Font fr = new Font("Bold", 14);
                         j.DrawString("Not correct 'if' command", fr, Brushes.Purple, new Point(50, 50));
@@ -212,11 +212,11 @@ namespace Aseassign
                         if (var.Contains(sp_command[1]) && int.TryParse(sp_command[3], out _))
                         {
                             int element = var.IndexOf(sp_command[1]);
-                            if(valid == "==")
+                            if (valid == "==")
                             {
                                 if (val[element] == sp_command[3])
                                 {
-                                    for(int jj = i + 1; jj < lines.Length; jj++)
+                                    for (int jj = i + 1; jj < lines.Length; jj++)
                                     {
                                         if (lines[jj].Trim() == "endif")
                                         {
@@ -235,7 +235,7 @@ namespace Aseassign
                             {
                                 if (int.Parse(val[element]) > int.Parse(sp_command[3]))
                                 {
-                                    for(int jj = i + 1; jj < lines.Length; jj++)
+                                    for (int jj = i + 1; jj < lines.Length; jj++)
                                     {
                                         if (lines[jj].Trim() == "endif")
                                         {
@@ -270,7 +270,7 @@ namespace Aseassign
                                 }
 
                             }
-                            else if(valid == "!=")
+                            else if (valid == "!=")
                             {
                                 if (int.Parse(val[element]) > int.Parse(sp_command[3]))
                                 {
@@ -289,7 +289,7 @@ namespace Aseassign
                                     }
                                 }
                             }
-                            else if(valid == ">=")
+                            else if (valid == ">=")
                             {
                                 if (int.Parse(val[element]) > int.Parse(sp_command[3]))
                                 {
@@ -357,7 +357,7 @@ namespace Aseassign
                                     {
                                         if (int.Parse(val[element_]) > int.Parse(val[second_element]))
                                         {
-                                            for (int jj = i + 1; jj < lines.Length; jj++ )
+                                            for (int jj = i + 1; jj < lines.Length; jj++)
                                             {
                                                 if (lines[jj].Trim() == "endif")
                                                 {
@@ -463,13 +463,14 @@ namespace Aseassign
                             }
                         }
                     }
+
+                }
                     if (sp_command[0] == "while")
-                    {
+                    { 
                         while_loop wh = new while_loop(sp_command[2]);
                         String condition = wh.validation();
-                        if (condition == "flase")
+                        if (condition == "false")
                         {
-
                             Font fr = new Font("Arial", 14);
                             j.DrawString("Invalid while condtion", fr, Brushes.Purple, new Point(50, 50));
                         }
@@ -477,17 +478,15 @@ namespace Aseassign
                         {
                             if (var.Contains(sp_command[1]))
                             {
-                                if(condition == "==")
+                                if (condition == "==")
                                 {
                                     int ele_ = var.IndexOf(sp_command[1]);
-                                    while (val[ele_] == sp_command[3]) ;
+                                    if (val[ele_] == sp_command[3]) 
                                     {
                                         for (int jj = i + 1; jj < lines.Length; jj++)
                                         {
                                             if (lines[jj].Trim() == "endloop")
                                             {
-                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
-                                                wt.iterate();
                                                 i = jj;
                                                 break;
                                             }
@@ -500,7 +499,7 @@ namespace Aseassign
                                         }
                                     }
                                 }
-                                if(condition == ">")
+                                if (condition == ">")
                                 {
                                     int ele_ = var.IndexOf(sp_command[1]);
                                     if (int.Parse(val[ele_]) > int.Parse(sp_command[3]))
@@ -509,8 +508,6 @@ namespace Aseassign
                                         {
                                             if (lines[jj].Trim() == "endloop")
                                             {
-                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
-                                                wt.iterate();
                                                 i = jj; break;
                                             }
                                             else
@@ -522,17 +519,15 @@ namespace Aseassign
                                         }
                                     }
                                 }
-                                if(condition == "<")
+                                if (condition == "<")
                                 {
                                     int ele_ = var.IndexOf(sp_command[1]);
                                     if (int.Parse(val[ele_]) < int.Parse(sp_command[3]))
                                     {
-                                        for(int jj = i + 1; jj < lines.Length; jj++)
+                                        for (int jj = i + 1; jj < lines.Length; jj++)
                                         {
                                             if (lines[jj].Trim() == "endloop")
                                             {
-                                                while_iteration wt = new while_iteration(sp_command[0] + " " + sp_command[1] + " " + sp_command[2] + " " + sp_command[3], j, fillvalue);
-                                                wt.iterate();
                                                 i = jj; break;
                                             }
                                             else
@@ -542,19 +537,18 @@ namespace Aseassign
                                                 whc.cmds();
                                             }
                                         }
-                                      }
                                     }
-                                if(condition == "!=") 
+                                }
+                                if (condition == "!=")
                                 {
                                     int ele_ = var.IndexOf(sp_command[1]);
                                     if (int.Parse(val[ele_]) != int.Parse(sp_command[3]))
                                     {
-                                        for (int jj = i + 1;jj < lines.Length; jj++)
+                                        for (int jj = i + 1; jj < lines.Length; jj++)
                                         {
                                             if (lines[jj].Trim() == "endloop")
                                             {
-                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
-                                                wt.iterate();
+                                               
                                                 i = jj; break;
                                             }
                                             else
@@ -564,19 +558,18 @@ namespace Aseassign
                                                 whc.cmds();
                                             }
                                         }
-                                      }
-                                   }
+                                    }
+                                }
                                 if (condition == "<=")
                                 {
                                     int ele_ = var.IndexOf(sp_command[1]);
                                     if (int.Parse(val[ele_]) <= int.Parse(sp_command[3]))
                                     {
-                                        for (int jj = i + 1;  jj < lines.Length; jj++)
+                                        for (int jj = i + 1; jj < lines.Length; jj++)
                                         {
                                             if (lines[jj].Trim() == "endloop")
                                             {
-                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
-                                                wt.iterate();
+                                             
                                                 i = jj; break;
                                             }
                                             else
@@ -597,8 +590,7 @@ namespace Aseassign
                                         {
                                             if (lines[jj].Trim() == "endloop")
                                             {
-                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
-                                                wt.iterate();
+                                            
                                                 i = jj; break;
                                             }
                                             else
@@ -612,7 +604,7 @@ namespace Aseassign
                                 }
                                 else
                                 {
-                                    for(int jj = i + 1; jj < lines.Length; jj++)
+                                    for (int jj = i + 1; jj < lines.Length; jj++)
                                     {
                                         if (lines[jj].Trim() == "endloop")
                                         {
@@ -622,18 +614,58 @@ namespace Aseassign
                                 }
 
                             }
-                         }
-                     }
-
-
                         }
                     }
-                }
-            }
+                    /*   
+                      if (sp_command[0] == "method")
+                      {
+                          String[] method_name = sp_command[1].Trim().Split('(', ')');
+                          String[] paramters = method_name[1].Trim().Split(',');
+                          method_name.Add(method_name[0] + "()");
+                          if(paramters == null)
+                          {
+                              for(int jj = i + 1;jj < lines.Length; jj++)
+                              {
+                                  if (lines[jj].Trim() == "endmethod")
+                                  {
+                                      i = jj; break;
+                                  }
+                                  else
+                                  {
+                                      method_name.Add(lines[jj]);
+                                  }
+                              }
+                          }
+                          else
+                          {
+                              for (int jj = 0; jj < paramters.Length; jj++)
+                              {
+                                  mth_vars.Add(paramters[jj]);
+                              }
+                              for (int jj = i + 1; jj < lines.Length; jj++)
+                              {
+                                  if (lines[j].Trim() == "endmethod")
+                                  {
+                                      i = jj; break;
+                                  }
+                                  else
+                                  {
+                                      method_name.Add(lines[jj]);
+                                  }
+                              }
 
+                          }*/
+
+
+
+                
+            } // for loop ends here
         }
+    }
 
-    
+}
+
+
 
 
 

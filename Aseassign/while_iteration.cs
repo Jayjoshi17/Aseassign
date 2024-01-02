@@ -13,7 +13,7 @@ namespace Aseassign
         Graphics j;
         String fillvalue;
         String command;
-        public while_iteration(String command, Graphics j, string fillvalue)
+        public while_iteration(String command, Graphics j,String fillvalue)
         {
            if(j is null)
             {

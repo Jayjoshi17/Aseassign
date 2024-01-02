@@ -9,9 +9,9 @@ namespace Aseassign
     public class while_loop
     {
         String condition;
-        public while_loop(string condition)
+        public while_loop(String condition)
         {
-            if (condition == null)
+            if (condition is null)
             {
                 throw new ArgumentNullException(nameof(condition));
             }
@@ -20,19 +20,19 @@ namespace Aseassign
         public String validation()
         {
             List<String> result = new List<String>();
-            list.Add("==");
-            list.Add("<=");
-            list.Add(">=");
-            list.Add("!=");
-            list.Add(">");
-            list.Add("<");
-            if(List.Contains(condition))
+            result.Add("==");
+            result.Add("<=");
+            result.Add(">=");
+            result.Add("!=");
+            result.Add(">");
+            result.Add("<");
+            if(result.Contains(condition))
             {
                 return condition;
             }
             else
             {
-                return condition;
+                return "false";
             }
 
         }
