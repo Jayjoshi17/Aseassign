@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="CircleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="triangleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
