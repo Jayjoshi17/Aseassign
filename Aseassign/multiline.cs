@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 using System.Xml.Linq;
+using System.Windows.Forms;
+using System.Configuration;
 
 namespace Aseassign
 {
@@ -461,13 +463,178 @@ namespace Aseassign
                             }
                         }
                     }
+                    if (sp_command[0] == "while")
+                    {
+                        while_loop wh = new while_loop(sp_command[2]);
+                        String condition = wh.validation();
+                        if (condition == "flase")
+                        {
+
+                            Font fr = new Font("Arial", 14);
+                            j.DrawString("Invalid while condtion", fr, Brushes.Purple, new Point(50, 50));
+                        }
+                        if (condition != "false")
+                        {
+                            if (var.Contains(sp_command[1]))
+                            {
+                                if(condition == "==")
+                                {
+                                    int ele_ = var.IndexOf(sp_command[1]);
+                                    while (val[ele_] == sp_command[3]) ;
+                                    {
+                                        for (int jj = i + 1; jj < lines.Length; jj++)
+                                        {
+                                            if (lines[jj].Trim() == "endloop")
+                                            {
+                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
+                                                wt.iterate();
+                                                i = jj;
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                String inside_loop = lines[jj];
+                                                while_calling whc = new while_calling(inside_loop, j, fillvalue, var, val);
+                                                whc.cmds();
+                                            }
+                                        }
+                                    }
+                                }
+                                if(condition == ">")
+                                {
+                                    int ele_ = var.IndexOf(sp_command[1]);
+                                    if (int.Parse(val[ele_]) > int.Parse(sp_command[3]))
+                                    {
+                                        for (int jj = i + 1; jj < lines.Length; jj++)
+                                        {
+                                            if (lines[jj].Trim() == "endloop")
+                                            {
+                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
+                                                wt.iterate();
+                                                i = jj; break;
+                                            }
+                                            else
+                                            {
+                                                String inside_loop = lines[jj];
+                                                while_calling whc = new while_calling(inside_loop, j, fillvalue, var, val);
+                                                whc.cmds();
+                                            }
+                                        }
+                                    }
+                                }
+                                if(condition == "<")
+                                {
+                                    int ele_ = var.IndexOf(sp_command[1]);
+                                    if (int.Parse(val[ele_]) < int.Parse(sp_command[3]))
+                                    {
+                                        for(int jj = i + 1; jj < lines.Length; jj++)
+                                        {
+                                            if (lines[jj].Trim() == "endloop")
+                                            {
+                                                while_iteration wt = new while_iteration(sp_command[0] + " " + sp_command[1] + " " + sp_command[2] + " " + sp_command[3], j, fillvalue);
+                                                wt.iterate();
+                                                i = jj; break;
+                                            }
+                                            else
+                                            {
+                                                String inside_loop = lines[jj];
+                                                while_calling whc = new while_calling(inside_loop, j, fillvalue, var, val);
+                                                whc.cmds();
+                                            }
+                                        }
+                                      }
+                                    }
+                                if(condition == "!=") 
+                                {
+                                    int ele_ = var.IndexOf(sp_command[1]);
+                                    if (int.Parse(val[ele_]) != int.Parse(sp_command[3]))
+                                    {
+                                        for (int jj = i + 1;jj < lines.Length; jj++)
+                                        {
+                                            if (lines[jj].Trim() == "endloop")
+                                            {
+                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
+                                                wt.iterate();
+                                                i = jj; break;
+                                            }
+                                            else
+                                            {
+                                                String inside_loop = lines[jj];
+                                                while_calling whc = new while_calling(inside_loop, j, fillvalue, var, val);
+                                                whc.cmds();
+                                            }
+                                        }
+                                      }
+                                   }
+                                if (condition == "<=")
+                                {
+                                    int ele_ = var.IndexOf(sp_command[1]);
+                                    if (int.Parse(val[ele_]) <= int.Parse(sp_command[3]))
+                                    {
+                                        for (int jj = i + 1;  jj < lines.Length; jj++)
+                                        {
+                                            if (lines[jj].Trim() == "endloop")
+                                            {
+                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
+                                                wt.iterate();
+                                                i = jj; break;
+                                            }
+                                            else
+                                            {
+                                                String inside_loop = lines[jj];
+                                                while_calling whc = new while_calling(inside_loop, j, fillvalue, var, val);
+                                                whc.cmds();
+                                            }
+                                        }
+                                    }
+                                }
+                                if (condition == ">=")
+                                {
+                                    int ele_ = var.IndexOf(sp_command[1]);
+                                    if (int.Parse(val[ele_]) >= int.Parse(sp_command[3]))
+                                    {
+                                        for (int jj = i + 1; jj < lines.Length; jj++)
+                                        {
+                                            if (lines[jj].Trim() == "endloop")
+                                            {
+                                                while_iteration wt = new while_iteration(lines[i], j, fillvalue);
+                                                wt.iterate();
+                                                i = jj; break;
+                                            }
+                                            else
+                                            {
+                                                String inside_loop = lines[jj];
+                                                while_calling whc = new while_calling(inside_loop, j, fillvalue, var, val);
+                                                whc.cmds();
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    for(int jj = i + 1; jj < lines.Length; jj++)
+                                    {
+                                        if (lines[jj].Trim() == "endloop")
+                                        {
+                                            i = jj;
+                                        }
+                                    }
+                                }
+
+                            }
+                         }
+                     }
+
+
+                        }
+                    }
                 }
             }
 
         }
 
-    }
-}
+    
+
 
 
 
