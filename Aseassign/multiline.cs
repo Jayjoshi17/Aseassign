@@ -11,6 +11,8 @@ using System.Windows.Markup;
 using System.Xml.Linq;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Text.RegularExpressions;
+using System.Net;
 
 namespace Aseassign
 {
@@ -21,6 +23,7 @@ namespace Aseassign
         List<string> var = new List<string>();
         List<string> val = new List<string>();
         List<string> mth_vars = new List<string>();
+        List<string> mth_vals = new List<string>();
         List<string> mthds = new List<string>();
         List<string> mthds_cmds = new List<string>();
         Graphics j;
@@ -616,47 +619,72 @@ namespace Aseassign
                             }
                         }
                     }
-                    /*   
-                      if (sp_command[0] == "method")
-                      {
-                          String[] method_name = sp_command[1].Trim().Split('(', ')');
-                          String[] paramters = method_name[1].Trim().Split(',');
-                          method_name.Add(method_name[0] + "()");
-                          if(paramters == null)
-                          {
-                              for(int jj = i + 1;jj < lines.Length; jj++)
-                              {
-                                  if (lines[jj].Trim() == "endmethod")
-                                  {
-                                      i = jj; break;
-                                  }
-                                  else
-                                  {
-                                      method_name.Add(lines[jj]);
-                                  }
-                              }
-                          }
-                          else
-                          {
-                              for (int jj = 0; jj < paramters.Length; jj++)
-                              {
-                                  mth_vars.Add(paramters[jj]);
-                              }
-                              for (int jj = i + 1; jj < lines.Length; jj++)
-                              {
-                                  if (lines[j].Trim() == "endmethod")
-                                  {
-                                      i = jj; break;
-                                  }
-                                  else
-                                  {
-                                      method_name.Add(lines[jj]);
-                                  }
-                              }
 
-                          }*/
+                if (sp_command[0] == "method")
+                {
+                    String[] method_name = sp_command[1].Trim().Split('(', ')');
+                    String[] paramters = method_name[1].Trim().Split(',');
+                    mthds.Add(method_name[0] + "()");
+                    if (paramters == null)
+                    {
+                        for (int jj = i + 1; jj < lines.Length; jj++)
+                        {
+                            if (lines[jj].Trim() == "endmethod")
+                            {
+                                i = jj; break;
+                            }
+                            else
+                            {
+                                mthds_cmds.Add(lines[jj]);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int jj = 0; jj < paramters.Length; jj++)
+                        {
+                            mth_vars.Add(paramters[jj]);
+                        }
+                        for (int jj = i + 1; jj < lines.Length; jj++)
+                        {
+                            if (lines[jj].Trim() == "endmethod")
+                            {
+                                i = jj; break;
+                            }
+                            else
+                            {
+                                mthds_cmds.Add(lines[jj]);
+                            }
+                        }
 
+                    }
 
+                }
+
+                String pattern = @"^([a-zA-Z_]\w*)\(([\w,]+)\)?$";
+                Match mm = Regex.Match(sp_command[0].Trim(), pattern);
+                if(mm.Success)
+                {
+                    String[] sp_cll = sp_command[0].Trim().Split('(', ')');
+                    String[] pr = sp_cll[1].Split(',');
+                    for (int jj = 0; jj < pr.Length; jj++) 
+                    {
+                        mth_vals.Add(pr[jj]);
+                    }
+                    for(int jj = 0; jj < mthds_cmds.Count(); jj++)
+                    {
+                        method_calling_with_paramtres m = new method_calling_with_paramtres(mthds_cmds[jj], j, fillvalue, mth_vars, mth_vals);
+                        m.cmds();
+                    }
+                }
+                if (mthds.Contains(sp_command[0]))
+                {
+                    for (int jj = 0; jj < mthds_cmds.Count(); jj++)
+                    {
+                        method_calling m = new method_calling(mthds_cmds[jj], j, fillvalue, var, val);
+                        m.cmds();
+                    }
+                }
 
                 
             } // for loop ends here
