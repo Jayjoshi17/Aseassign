@@ -58,6 +58,8 @@
     </Compile>
     <Compile Include="if_condition.cs" />
     <Compile Include="if_condition_calling.cs" />
+    <Compile Include="method_calling.cs" />
+    <Compile Include="method_calling_with_paramtres.cs" />
     <Compile Include="multiline.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

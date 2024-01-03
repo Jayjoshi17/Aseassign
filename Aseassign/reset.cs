@@ -10,6 +10,10 @@ namespace Aseassign
     {
         public reset(String commandline, String multiline)
         {
+            if (commandline is null)
+            {
+                throw new ArgumentNullException(nameof(commandline));
+            }
             commandline = " ";
             multiline = " ";
         }
