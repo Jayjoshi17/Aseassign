@@ -33,7 +33,7 @@ namespace Aseassign
             var ase = Graphics.FromImage(pictureBox1.Image);
             ase.Clear(Color.White);
 
-            fill ff = new fill();
+            fill ff = new fill(ase);
             ff.fillvalue = fillBox.Text;
 
             ddraw d = new ddraw();
@@ -93,6 +93,10 @@ namespace Aseassign
                 file.Close();
             }
         }
-  
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
