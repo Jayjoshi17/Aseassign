@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// With the help of this canvas it clear the value whenever it is called.
+    /// </summary>
     public class clear
     {
+        /// <summary>
+        /// This method will give it the purple color and draw the method will clear the whole 
+        /// code.
+        /// </summary>
+        /// <param name="j"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public void draw(Graphics j)
         {
             if(j is null)
