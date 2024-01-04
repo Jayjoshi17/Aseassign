@@ -15,7 +15,10 @@ using System.Text.RegularExpressions;
 using System.Net;
 
 namespace Aseassign
-{
+{ /// <summary>
+/// This is the class of multiline text box from 
+/// which command get entered from the user side one by one.
+/// </summary>
     public class multiline
     {
         String cmds;
@@ -27,12 +30,28 @@ namespace Aseassign
         List<string> mthds = new List<string>();
         List<string> mthds_cmds = new List<string>();
         Graphics j;
+        /// <summary>
+        /// Here, a constructed is created which will take the value 
+        /// of fill and whole code is in the multiline box and 
+        /// for drawing objects their is a Graphics which will 
+        /// assign to the global class variable.
+        /// </summary>
+        /// <param name="cmds"></param>
+        /// <param name="j">This is the object of Graphics which works to draw</param>
+        /// <param name="fillvalue">It is for to draw the shape is to drawn
+        /// without or with fill</param>
         public multiline(String cmds, Graphics j, String fillvalue)
         {
             this.cmds = cmds;
             this.j = j;
             this.fillvalue = fillvalue;
         }
+        /// <summary>
+        /// This code plays a vital role in which all the commands and conditions will run
+        /// by thier specific class and will include all the components like drawing, while, if
+        /// and method loops.
+        /// </summary>
+        /// <exception cref="ArgumentNullException"></exception>
         public void multiline_call()
         {
             if (j is null)
@@ -51,12 +70,13 @@ namespace Aseassign
             {
                 String[] sp_command = lines[i].Split(' ');
 
-
+                // this code is for creation of variables.
                 if (sp_command.Contains("="))
                 {
                     val.Add(sp_command[2]);
                     var.Add(sp_command[0]);
                 }
+                // From here all the condition of drawing shapes are started. 
                 if (acttable.Contains(sp_command[0]))
                 {
                     sp_command[0].ToLower();
@@ -154,7 +174,7 @@ namespace Aseassign
                         default: break;
                     }
                 }
-
+                // this code explains the conditions for print 
                 if (sp_command[0].Equals("print"))
                 {
                     Font ft = new Font("Arial", 14);
@@ -194,6 +214,8 @@ namespace Aseassign
                         }
                     }
                 }
+
+                // This part is for increment and decrement.
                 if (var.Contains(sp_command[0]) && sp_command[1] == "=" && (sp_command[2]) == sp_command[0])
                 {
                     vb_op vp = new vb_op(val, var);
@@ -201,6 +223,7 @@ namespace Aseassign
                     val[element] = vp.n_w(lines[i]);
                 }
 
+                // From here all the loops will be started this is the if loop
                 if (sp_command[0] == "if")
                 {
                     if_condition fc = new if_condition(j, sp_command[2]);
@@ -468,6 +491,8 @@ namespace Aseassign
                     }
 
                 }
+
+                // while loop
                     if (sp_command[0] == "while")
                     { 
                         while_loop wh = new while_loop(sp_command[2]);
@@ -620,6 +645,7 @@ namespace Aseassign
                         }
                     }
 
+                    // this is the last loop which is method loop
                 if (sp_command[0] == "method")
                 {
                     String[] method_name = sp_command[1].Trim().Split('(', ')');
