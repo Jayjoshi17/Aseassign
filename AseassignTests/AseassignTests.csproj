@@ -65,6 +65,7 @@
     <Compile Include="method_calling_with_paramtresTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleTests.cs" />
+    <Compile Include="resetTests.cs" />
     <Compile Include="triangleTests.cs" />
     <Compile Include="vb_opTests.cs" />
     <Compile Include="while_callingTests.cs" />
