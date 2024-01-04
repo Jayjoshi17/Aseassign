@@ -10,10 +10,24 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is class that will draw the commands given to vaild parameters with the ddraw class. 
+    /// Anything will not be drawn it self in this class.
+    /// </summary>
     public class ddraw
     {
         private int xpos = 0;
         private int ypos = 0;
+        /// <summary>
+        /// This draw method will take command from the user and will execute the class of that 
+        /// specific function or shape.
+        /// </summary>
+        /// <param name="j">It will pass the shapes class in order for them to draw the shapes
+        /// with Graphics</param>
+        /// <param name="cmd">This command is entered which will determined which drawing has to
+        /// be done</param>
+        /// <param name="fillvalue">It is for the shapes to be filled or just with outline 
+        /// it fill the value to known it.</param>
         public void draw(Graphics j, String cmd, String fillvalue)
         {
 
