@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
-    internal class method_calling
+    public class method_calling
     {
         String code;
         String fillvalue;
