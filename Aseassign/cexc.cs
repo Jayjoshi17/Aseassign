@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
-    public class circleexcep : Exception
+    public class cexc : Exception
     {
-        public circleexcep(Graphics j) 
+        public cexc(Graphics j) 
         {
             Font fr = new Font("Arial", 14);
-            j.DrawString("Provide decent parameters of circle ", fr, Brushes.Purple, new Point(50, 50));
+            j.DrawString("Provide proper command for clear", fr, Brushes.Purple, new Point(50, 50));
         }
     }
-    
-    }
-
+}
