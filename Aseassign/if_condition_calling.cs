@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class if_condition_calling
     {
         String code;
@@ -18,6 +21,15 @@ namespace Aseassign
         Graphics j;
         List<string> var = new List<string>();
         List<string> val = new List<string>();
+        /// <summary>
+        /// This is a class of if condition for calling shapes.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="j">This is the drawing object of Graphics</param>
+        /// <param name="fillvalue">Here the user can fill their values</param>
+        /// <param name="var">this is for variable </param>
+        /// <param name="val">this indicate values</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public if_condition_calling(String command, Graphics j, String fillvalue, List<string> var, List<string> val)
         {
             if (j is null)
@@ -30,6 +42,9 @@ namespace Aseassign
             this.var = var;
             this.val = val;
         }
+        /// <summary>
+        /// this is the method of it.
+        /// </summary>
         public void comm()
         {
             String[] sp_command = code.Split(' ');
