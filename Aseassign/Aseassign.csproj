@@ -79,6 +79,7 @@
     <Compile Include="triangle.cs" />
     <Compile Include="trianglexc.cs" />
     <Compile Include="vb_op.cs" />
+    <Compile Include="whileexc.cs" />
     <Compile Include="while_calling.cs" />
     <Compile Include="while_iteration.cs" />
     <Compile Include="while_loop.cs" />
