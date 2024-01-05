@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
+    <Compile Include="circleexcep.cs" />
     <Compile Include="clear.cs" />
     <Compile Include="ddraw.cs" />
     <Compile Include="fill.cs" />
