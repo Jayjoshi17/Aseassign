@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is class of method and it will call when method does not have any parameters.
+    /// </summary>
     public class method_calling
     {
         String code;
@@ -14,6 +17,15 @@ namespace Aseassign
         Graphics j;
         List<string> var = new List<string>();
         List<string> val = new List<string>();
+        /// <summary>
+        /// Here their is constructor of method calling just below it.
+        /// </summary>
+        /// <param name="code">It is a method block in the command</param>
+        /// <param name="j">It use for to draw the shapes by Graphics</param>
+        /// <param name="fillvalue">It is for the vale can be filled by which user passes</param>
+        /// <param name="var">For the list of variable</param>
+        /// <param name="val">list of created variables values</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public method_calling(String code, Graphics j, String fillvalue, List<string> var, List<string> val)
         {
             if(j is null)
@@ -26,6 +38,9 @@ namespace Aseassign
             this.var = var;
             this.val = val;
         }
+        /// <summary>
+        /// This cmds method will call classes of the command passed in the method block.
+        /// </summary>
         public void cmds()
         {
             String[] sp_command = code.Split(' ');
