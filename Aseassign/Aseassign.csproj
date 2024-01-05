@@ -62,6 +62,7 @@
     <Compile Include="ifexec.cs" />
     <Compile Include="if_condition.cs" />
     <Compile Include="if_condition_calling.cs" />
+    <Compile Include="invalidmulti.cs" />
     <Compile Include="methdexc.cs" />
     <Compile Include="method_calling.cs" />
     <Compile Include="method_calling_with_paramtres.cs" />
