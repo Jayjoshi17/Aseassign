@@ -113,6 +113,14 @@ namespace Aseassign
                         break;
                 }
             }
+            else
+            {
+                try
+                {
+                    throw new notavalidexc(j, 0);
+                }
+                catch { }
+            }
         }
 
     }
