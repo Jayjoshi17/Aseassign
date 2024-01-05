@@ -74,6 +74,7 @@
     <Compile Include="Rectangle.cs" />
     <Compile Include="reset.cs" />
     <Compile Include="save.cs" />
+    <Compile Include="sqandrecex.cs" />
     <Compile Include="triangle.cs" />
     <Compile Include="vb_op.cs" />
     <Compile Include="while_calling.cs" />
