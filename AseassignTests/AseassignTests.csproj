@@ -57,6 +57,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="cexcTests.cs" />
     <Compile Include="circleexcepTests.cs" />
     <Compile Include="CircleTests.cs" />
     <Compile Include="clearTests.cs" />
