@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 namespace Aseassign
 {
     /// <summary>
-    /// 
+    /// This is the if loop exception
     /// </summary>
     public class ifexec : Exception
     {
         /// <summary>
-        /// 
+        /// This is the if exception constructor 
         /// </summary>
         /// <param name="j">This is the object of Graphics to draw shapes</param>
-        /// <param name="ypos"></param>
+        /// <param name="ypos">This is a position of axis on which the conditions where apply</param>
         /// <exception cref="ArgumentNullException"></exception>
         public ifexec(Graphics j, int ypos) 
         {
