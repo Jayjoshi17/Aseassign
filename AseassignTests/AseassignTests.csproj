@@ -62,6 +62,7 @@
     <Compile Include="CircleTests.cs" />
     <Compile Include="clearTests.cs" />
     <Compile Include="ddrawTests.cs" />
+    <Compile Include="emptycmdexcTests.cs" />
     <Compile Include="fillTests.cs" />
     <Compile Include="if_conditionTests.cs" />
     <Compile Include="if_condition_callingTests.cs" />
