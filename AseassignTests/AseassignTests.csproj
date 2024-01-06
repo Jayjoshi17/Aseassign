@@ -78,6 +78,7 @@
     <Compile Include="resetexTests.cs" />
     <Compile Include="resetTests.cs" />
     <Compile Include="saveTests.cs" />
+    <Compile Include="sqandrecexTests.cs" />
     <Compile Include="triangleTests.cs" />
     <Compile Include="vb_opTests.cs" />
     <Compile Include="while_callingTests.cs" />
