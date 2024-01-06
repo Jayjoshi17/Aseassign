@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is a class of method calling with parameters.
+    /// </summary>
     public class method_calling_with_paramtres
     {
         String code;
@@ -14,6 +17,15 @@ namespace Aseassign
         Graphics j;
         List<string> var = new List<string>();
         List<string> val = new List<string>();
+        /// <summary>
+        /// Here, I made a constructor of method calling with parameters
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="j">This is the object of Graphics to draw shapes</param>
+        /// <param name="fillvalue">It is for the fill to value</param>
+        /// <param name="var">This store a variable</param>
+        /// <param name="val"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public method_calling_with_paramtres (String code, Graphics j, String fillvalue, List<string> var, List<string> val)
         {
             if (j is null)
