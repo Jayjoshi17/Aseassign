@@ -64,6 +64,7 @@
     <Compile Include="ddrawTests.cs" />
     <Compile Include="emptycmdexcTests.cs" />
     <Compile Include="fillTests.cs" />
+    <Compile Include="ifexecTests.cs" />
     <Compile Include="if_conditionTests.cs" />
     <Compile Include="if_condition_callingTests.cs" />
     <Compile Include="method_callingTests.cs" />
