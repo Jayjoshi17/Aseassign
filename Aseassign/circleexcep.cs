@@ -7,10 +7,20 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is the cirlce exception class file.
+    /// </summary>
     public class circleexcep : Exception
     {
+        /// <summary>
+        /// In this if user do not enter proper parameters then they will get this meaasge that wtitten below.
+        /// </summary>
+        /// <param name="j">This is a object of Graphics for Drawing</param>
+        /// <param name="ypos">This is for the variable </param>
+        /// <exception cref="ArgumentNullException"></exception>
         public circleexcep(Graphics j,int ypos) 
         {
+            
             if (j is null)
             {
                 throw new ArgumentNullException(nameof(j));
