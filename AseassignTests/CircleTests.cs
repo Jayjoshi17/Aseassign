@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Aseassign.Tests
 {
+    /// <summary>
+    /// It is a unit test of class circle.
+    /// </summary>
     [TestClass()]
     public class CircleTests
     {
