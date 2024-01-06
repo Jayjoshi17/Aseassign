@@ -16,7 +16,7 @@ namespace Aseassign
         /// This method will give it the purple color and draw the method will clear the whole 
         /// code.
         /// </summary>
-        /// <param name="j"></param>
+        /// <param name="j">This is the object of Graphics to draw shapes</param>
         /// <exception cref="ArgumentNullException"></exception>
         public void draw(Graphics j)
         {
