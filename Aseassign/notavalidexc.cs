@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is for the not a valid exception.
+    /// </summary>
     public class notavalidexc : Exception
     {
+        /// <summary>
+        /// I made a one constructor of not a vaild class
+        /// </summary>
+        /// <param name="j">This is the object of Graphics to draw shapes</param>
+        /// <param name="ypos">This is for the position of y-axis</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public notavalidexc(Graphics j, int ypos)
         {
             if (j is null)
