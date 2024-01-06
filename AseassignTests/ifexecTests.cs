@@ -18,6 +18,7 @@ namespace Aseassign.Tests
         [ExpectedException(typeof(ArgumentNullException))]  
         public void ifexecTest()
         {
+
             ifexec ifec = new ifexec(null, 0);
             ifec.Source = null;
         }

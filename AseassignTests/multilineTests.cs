@@ -16,7 +16,7 @@ namespace Aseassign.Tests
         public void multilineTest()
         {
             multiline ln = new multiline(null, null, null);
-            ln.Equals(null);
+            ln.multiline_call();
         }
     }
 }

@@ -11,6 +11,10 @@ namespace Aseassign
     {
         public methdexc(Graphics j, int ypos) 
         {
+            if (j is null)
+            {
+                throw new ArgumentNullException(nameof(j));
+            }
             Font fr = new Font("Arial", 14);
             j.DrawString("Not a valid 'method' command", fr, Brushes.Purple, new Point(0, ypos));
         }
