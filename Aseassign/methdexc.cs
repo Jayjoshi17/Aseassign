@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is a exception class of method condition
+    /// </summary>
     public class methdexc : Exception
     {
+        /// <summary>
+        /// Here, I made a constructor of method condition
+        /// </summary>
+        /// <param name="j">This is the object of Graphics to draw shapes</param>
+        /// <param name="ypos">This is a postion where one axis values are stored</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public methdexc(Graphics j, int ypos) 
         {
             if (j is null)
