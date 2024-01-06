@@ -37,13 +37,13 @@ namespace Aseassign
             ff.fillvalue = fillBox.Text;
 
             ddraw d = new ddraw();
-            if (textBox1.Text.Equals("reset"))
+            if (textBox2.Text.Equals("reset"))
             {
                 reset t = new reset(textBox2.Text, textBox1.Text);
                 textBox2.Text = t.do_reset();
                 textBox1.Text = t.do_reset();
-                fill.Text = t.do_reset();
-                ase.Clear(Color.Blue);
+                fillBox.Text = t.do_reset();
+                ase.Clear(Color.White);
             }
             else
             {
@@ -99,6 +99,43 @@ namespace Aseassign
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            reset rs = new reset(textBox2.Text, textBox1.Text);
+            textBox2.Text = rs.do_reset();
+            textBox1 .Text = rs.do_reset();
+            fillBox.Text = rs.do_reset();
+            var graphics = Graphics.FromImage(pictureBox1.Image);
+            graphics.Clear(Color.White);
+        }
+
+        private void Syntax_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            var vg = Graphics.FromImage(pictureBox1.Image);
+            vg.Clear(Color.White);
+            if(textBox1.Text != "")
+            {
+                if(textBox2.Text.Equals("run"))
+                {
+                    String muti = textBox1 .Text;
+                    String[] sp_command = muti.Split('\n');
+                    int x = 0;
+                    foreach (String s in sp_command)
+                    {
+                        syntaxch sh = new syntaxch(s, vg, x);
+                        x += 30;
+                    }
+                }
+            }
+            else
+            {
+                syntaxch sh = new syntaxch(textBox2.Text, vg, 40);
+              
+            }
         }
     }
 }

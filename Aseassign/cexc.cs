@@ -9,10 +9,10 @@ namespace Aseassign
 {
     public class cexc : Exception
     {
-        public cexc(Graphics j) 
+        public cexc(Graphics j,int y) 
         {
             Font fr = new Font("Arial", 14);
-            j.DrawString("Provide proper command for clear", fr, Brushes.Purple, new Point(50, 50));
+            j.DrawString("Provide proper command for clear", fr, Brushes.Purple, new Point(0, y));
         }
     }
 }

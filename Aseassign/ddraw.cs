@@ -29,7 +29,11 @@ namespace Aseassign
         /// <param name="fillvalue">It is for the shapes to be filled or just with outline 
         /// it fill the value to known it.</param>
         public void draw(Graphics j, String cmd, String fillvalue)
-        {
+        { 
+            if (j is null)
+            {
+                throw new ArgumentNullException(nameof(j));
+            }
 
             Pen pen = new Pen(Color.Purple);
             Brush brush = new SolidBrush(Color.Red);

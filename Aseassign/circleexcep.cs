@@ -9,10 +9,10 @@ namespace Aseassign
 {
     public class circleexcep : Exception
     {
-        public circleexcep(Graphics j) 
+        public circleexcep(Graphics j,int ypos) 
         {
             Font fr = new Font("Arial", 14);
-            j.DrawString("Provide decent parameters of circle ", fr, Brushes.Purple, new Point(50, 50));
+            j.DrawString("Provide decent parameters of circle ", fr, Brushes.Purple, new Point(0, ypos));
         }
     }
     

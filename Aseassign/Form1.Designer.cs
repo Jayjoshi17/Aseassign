@@ -59,6 +59,7 @@
             this.Syntax.TabIndex = 2;
             this.Syntax.Text = "Syntax";
             this.Syntax.UseVisualStyleBackColor = true;
+            this.Syntax.Click += new System.EventHandler(this.Syntax_Click);
             // 
             // Reset
             // 
@@ -68,6 +69,7 @@
             this.Reset.TabIndex = 3;
             this.Reset.Text = "Reset";
             this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
             // pictureBox1
             // 
