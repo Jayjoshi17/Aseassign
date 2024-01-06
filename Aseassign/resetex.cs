@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is the exception of reset class
+    /// </summary>
     public class resetex : Exception
     {
+        /// <summary>
+        /// Their is the constructor of reset
+        /// </summary>
+        /// <param name="j">This is the object of Graphics to draw shapes</param>
+        /// <param name="ypos">This is the y-axis</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public resetex(Graphics j, int ypos)
         {
             if (j is null)
