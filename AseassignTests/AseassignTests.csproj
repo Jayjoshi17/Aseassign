@@ -75,6 +75,7 @@
     <Compile Include="openbtTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleTests.cs" />
+    <Compile Include="resetexTests.cs" />
     <Compile Include="resetTests.cs" />
     <Compile Include="saveTests.cs" />
     <Compile Include="triangleTests.cs" />
