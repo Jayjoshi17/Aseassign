@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is a exception of empty command line 
+    /// </summary>
     public class emptycmdexc : Exception
     {
+        /// <summary>
+        /// 
+        /// </sumIf user do not enter any values then they will get message as seen in below>
+        /// <param name="j">It is a object which used for drawing from Graphics</param>
+        /// <param name="ypos">This is the position for on which axix they have to draw</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public emptycmdexc(Graphics j, int ypos) 
         {
             if (j is null)
