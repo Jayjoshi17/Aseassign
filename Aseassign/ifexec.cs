@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ifexec : Exception
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="j">This is the object of Graphics to draw shapes</param>
+        /// <param name="ypos"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public ifexec(Graphics j, int ypos) 
         {
             if (j is null)
