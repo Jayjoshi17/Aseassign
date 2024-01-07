@@ -82,11 +82,18 @@ namespace Aseassign
                         triangle tt = new triangle(j, pen);
                         if (fillvalue == "on")
                         {
-                            tt.drawfill(j, brush, xpos, ypos);
+                            String[] first_value = split_command[1].Split(',');
+                            String[] second_value = split_command[2].Split(',');
+                            String[] third_value = split_command[3].Split(',');
+                            tt.drawfill(j, brush, xpos, ypos, int.Parse(first_value[0]), int.Parse(first_value[1]), int.Parse(second_value[0]), int.Parse(second_value[1]), int.Parse(third_value[0]), int.Parse(third_value[1]));
+
                         }
                         else
                         {
-                            tt.draw(j, pen, xpos, ypos);
+                            String[] first_value = split_command[1].Split(',');
+                            String[] second_value = split_command[2].Split(',');
+                            String[] third_value = split_command[3].Split(',');
+                            tt.draw(j, pen, xpos, ypos, int.Parse(first_value[0]), int.Parse(first_value[1]), int.Parse(second_value[0]), int.Parse(second_value[1]), int.Parse(third_value[0]), int.Parse(third_value[1]));
                         }
                         break;
                     case "square":

@@ -33,13 +33,13 @@ namespace Aseassign
         /// <param name="xpos">This is for the x-axis</param>
         /// <param name="ypos">This is for the y-axis</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public void draw(Graphics j, Pen p, int xpos, int ypos)
+        public void draw(Graphics j, Pen p, int xpos, int ypos,int jm1, int jm2, int mj1, int mj2, int mp1, int mp2)
         {
             if (j is null)
             {
                 throw new ArgumentNullException(nameof(j));
             }
-            Point[] points = { new Point(9, 80), new Point(100, 10), new Point(150, 200) };
+            Point[] points = { new Point(jm1, jm2), new Point(mj1, mj2), new Point(mp1, mp2)};
             j.DrawPolygon(p, points);
         }
         /// <summary>
@@ -50,13 +50,13 @@ namespace Aseassign
         /// <param name="xpos">This is for the x-axis</param>
         /// <param name="ypos">This is for the y-axis</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public void drawfill(Graphics j, Brush brush, int xpos, int ypos)
+        public void drawfill(Graphics j, Brush brush, int xpos, int ypos, int jm1, int jm2, int mj1, int mj2, int mp1, int mp2)
         {
             if (j is null)
             {
                 throw new ArgumentNullException(nameof(j));
             }
-            Point[] points = { new Point(9, 100), new Point(112, 10), new Point(150, 100) };
+            Point[] points = { new Point(jm1, jm2), new Point(mj1, mj2), new Point(mp1, mp2) };
             j.FillPolygon(brush, points);
         }
     }
