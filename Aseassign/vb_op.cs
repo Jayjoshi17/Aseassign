@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is the class of variable operation
+    /// </summary>
     public class vb_op
     {
         List<String> val;
@@ -19,6 +22,11 @@ namespace Aseassign
             this.val = val;
             this.var = var;
         }
+        /// <summary>
+        /// Their is a method of variable operation in below
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <returns></returns>
         public String n_w(String operation)
         {
             String[] sp_command = operation.Split(' ');
