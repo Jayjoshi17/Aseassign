@@ -25,11 +25,11 @@ namespace Aseassign
         /// <summary>
         /// Their is a constructor of while calling below it.
         /// </summary>
-        /// <param name="code"></param>
-        /// <param name="j"></param>
-        /// <param name="fillvalue"></param>
-        /// <param name="var"></param>
-        /// <param name="val"></param>
+        /// <param name="code">Takes the string from users</param>
+        /// <param name="j">This is a object for drawing of Graphics</param>
+        /// <param name="fillvalue">This is to fill the value</param>
+        /// <param name="var">Indicates the variable</param>
+        /// <param name="val">Indicates the value of it</param>
         /// <exception cref="ArgumentNullException"></exception>
         public while_calling(String code, Graphics j, String fillvalue, List<string> var, List<string> val)
         {
