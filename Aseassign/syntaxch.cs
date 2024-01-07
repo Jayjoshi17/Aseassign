@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is the exception class of syntax
+    /// </summary>
     public class syntaxch
     {
+        /// <summary>
+        /// Their is a constructor of syntax
+        /// </summary>
+        /// <param name="comm">It is the object for the commandline</param>
+        /// <param name="j">This is the object of Graphics to draw shapes</param>
+        /// <param name="ypos">It indicates the y-axis</param>
         public syntaxch(String comm, Graphics j, int ypos)
         {
             int flag = 1;
