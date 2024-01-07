@@ -126,14 +126,16 @@ namespace Aseassign
                     int x = 0;
                     foreach (String s in sp_command)
                     {
-                        syntaxch sh = new syntaxch(s, vg, x);
+                        syntaxch sh = new syntaxch();
+                        sh.synt(s, vg, x);
                         x += 30;
                     }
                 }
             }
             else
             {
-                syntaxch sh = new syntaxch(textBox2.Text, vg, 40);
+                syntaxch sh = new syntaxch();
+                sh.synt(textBox2.Text, vg, 40);
               
             }
         }

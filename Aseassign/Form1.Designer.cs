@@ -53,9 +53,9 @@
             // 
             // Syntax
             // 
-            this.Syntax.Location = new System.Drawing.Point(316, 412);
+            this.Syntax.Location = new System.Drawing.Point(316, 402);
             this.Syntax.Name = "Syntax";
-            this.Syntax.Size = new System.Drawing.Size(109, 30);
+            this.Syntax.Size = new System.Drawing.Size(109, 40);
             this.Syntax.TabIndex = 2;
             this.Syntax.Text = "Syntax";
             this.Syntax.UseVisualStyleBackColor = true;
@@ -63,9 +63,9 @@
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(447, 413);
+            this.Reset.Location = new System.Drawing.Point(447, 402);
             this.Reset.Name = "Reset";
-            this.Reset.Size = new System.Drawing.Size(94, 28);
+            this.Reset.Size = new System.Drawing.Size(94, 39);
             this.Reset.TabIndex = 3;
             this.Reset.Text = "Reset";
             this.Reset.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // Run
             // 
-            this.Run.Location = new System.Drawing.Point(560, 413);
+            this.Run.Location = new System.Drawing.Point(560, 402);
             this.Run.Name = "Run";
-            this.Run.Size = new System.Drawing.Size(98, 31);
+            this.Run.Size = new System.Drawing.Size(98, 42);
             this.Run.TabIndex = 4;
             this.Run.Text = "Run";
             this.Run.UseVisualStyleBackColor = true;

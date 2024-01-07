@@ -15,10 +15,10 @@ namespace Aseassign
         /// <summary>
         /// Their is a constructor of syntax
         /// </summary>
-        /// <param name="comm">It is the object for the commandline</param>
+        /// <param name="comm">It is the object for the command passes by user</param>
         /// <param name="j">This is the object of Graphics to draw shapes</param>
         /// <param name="ypos">It indicates the y-axis</param>
-        public syntaxch(String comm, Graphics j, int ypos)
+        public int synt(String comm, Graphics j, int ypos)
         {
             int flag = 1;
             String cmdline = comm;
@@ -38,8 +38,49 @@ namespace Aseassign
             cmdlist.Add("method");
             cmdlist.Add("endif");
             cmdlist.Add("endloop");
+            cmdlist.Add("print");
+            if (cmdline.StartsWith("endif"))
+            {
+                flag = 0;
+                if (cmdline.Trim() == "endif")
+                {
+                    Font fr = new Font("Arial", 14);
+                    j.DrawString("The order is", fr, Brushes.Purple, new Point(0, ypos));
+                }
+            }
+            if (cmdline.StartsWith("endmethod"))
+            {
+                flag = 0;
+                if (cmdline.Trim() == "endmethod")
+                {
+                    Font fr = new Font("Arial", 14);
+                    j.DrawString("The syntax is correct", fr, Brushes.Purple, new Point(0, ypos));
+                }
+            }
+            if (cmdline.StartsWith("endloop"))
+            {
+                flag = 0;
+                if (cmdline.Trim() == "endloop")
+                {
+                    Font fr = new Font("Arial", 14);
+                    j.DrawString("The syntax is correct", fr, Brushes.Purple, new Point(0, ypos));
+                }
+            }
+            if (cmdline.Contains(" = "))
+            {
+                flag = 0;
 
-            cmdlist.Add("endmethod");
+                Font fr = new Font("Arial", 14);
+                j.DrawString("The syntax is correct", fr, Brushes.Purple, new Point(0, ypos));
+            }
+            if (!cmdlist.Contains(sp_command[0]) && cmdline.Contains('(') && cmdline.Contains(')'))
+            {
+                flag = 0;
+                Font fr = new Font("Arial", 14);
+                j.DrawString("The syntax is correct", fr, Brushes.Purple, new Point(0, ypos));
+            }
+
+            // cmdlist.Add("endmethod");
             try
             {
                 if (cmdlist.Contains(sp_command[0]))
@@ -157,7 +198,22 @@ namespace Aseassign
                         throw new methdexc(j, ypos);
                     }
                 }
-                else
+                if (sp_command[0] == "print")
+                {
+                    int ttl_el = sp_command.Count();
+                    if (ttl_el == 2)
+                    {
+                        Font fr = new Font("Arial", 14);
+                        j.DrawString("The syntax is correct", fr, Brushes.Purple, new Point(0, ypos));
+                    }
+
+                    else
+                    {
+                        throw new notavalidexc(j, ypos);
+                    }
+                }
+
+                else if (flag == 1)
                 {
                     throw new notavalidexc(j, ypos);
                 }
@@ -166,7 +222,7 @@ namespace Aseassign
             {
 
             }
-
+            return flag;
         }
 
     }
