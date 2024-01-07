@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Aseassign.Tests
 {
+    /// <summary>
+    /// This is an unit test of while iteration
+    /// </summary>
     [TestClass()]
     public class while_iterationTests
     {
