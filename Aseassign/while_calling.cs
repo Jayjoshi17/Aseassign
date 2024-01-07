@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is class file of to calling while condition
+    /// </summary>
     public class while_calling
     {
         String code;
@@ -19,6 +22,15 @@ namespace Aseassign
         Graphics j;
         List<string> var = new List<string>();
         List<string> val = new List<string>();
+        /// <summary>
+        /// Their is a constructor of while calling below it.
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="j"></param>
+        /// <param name="fillvalue"></param>
+        /// <param name="var"></param>
+        /// <param name="val"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public while_calling(String code, Graphics j, String fillvalue, List<string> var, List<string> val)
         {
             if (j is null)
