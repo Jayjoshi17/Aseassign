@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Aseassign
 {
+    /// <summary>
+    /// This is a class of while loop
+    /// </summary>
     public class while_loop
     {
         String condition;
@@ -17,6 +20,10 @@ namespace Aseassign
             }
             this.condition = condition;
         }
+        /// <summary>
+        /// Their is a method of validation of it with list in below
+        /// </summary>
+        /// <returns></returns>
         public String validation()
         {
             List<String> result = new List<String>();
